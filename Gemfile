@@ -28,6 +28,11 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# net-smtp
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -40,6 +45,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'spring'
   gem 'web-console', '>= 4.1.0'
+  gem 'i18n_generators'
 end
 
 group :test do
