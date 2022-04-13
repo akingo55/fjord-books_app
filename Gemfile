@@ -26,9 +26,9 @@ gem 'devise'
 gem 'devise-i18n'
 
 # fix error
-gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
+gem 'net-smtp'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

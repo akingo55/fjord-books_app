@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
 
@@ -5,11 +7,9 @@ class UsersController < ApplicationController
     @users = User.order(:id).page(params[:page])
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     respond_to do |format|
