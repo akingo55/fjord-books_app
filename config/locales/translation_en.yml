@@ -10,19 +10,15 @@ en:
         picture: Picture  #g
         title: Title  #g
 
-  show:
-    name: show
-  edit:
-    name: edit
-  destroy:
-    name: destroy
-  new:
-    name: new book
-  back:
-    name: back
+  common:
+    show: show
+    edit: edit
+    destroy: destroy
+    new: new book
+    back: back
 
   notice:
-    create: Book was successfully created.
-    update: Book was successfully updated.
-    destroy: Book was successfully destroyed.
+    create: "%{record} was successfully created."
+    update: "%{record} was successfully updated."
+    destroy: "%{record} was successfully destroyed."
     confirm: Are you sure?

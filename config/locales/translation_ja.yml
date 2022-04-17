@@ -10,19 +10,15 @@ ja:
         picture: 写真  #g
         title: タイトル  #g
 
-  show:
-    name: 表示
-  edit:
-    name: 編集
-  destroy:
-    name: 削除
-  new:
-    name: 新しい本を登録する
-  back:
-    name: TOPに戻る
+  common:
+    show: 表示
+    edit: 編集
+    destroy: 削除
+    new: 新しい本を登録する
+    back: TOPに戻る
 
   notice:
-    create: 本を登録しました
-    update: 本を更新しました
-    destroy: 本を削除しました
+    create: "%{record}を登録しました"
+    update: "%{record}を更新しました"
+    destroy: "%{record}を削除しました"
     confirm: 本当に削除しますか？
