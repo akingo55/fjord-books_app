@@ -14,8 +14,10 @@ en:
     show: show
     edit: edit
     destroy: destroy
-    new: new book
     back: back
+
+  book:
+    new: new book
 
   notice:
     create: "%{record} was successfully created."
