@@ -12,14 +12,18 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: t('controllers.common.notice_update', name: Book.model_name.human) }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    if current_user.id == @user.id
+      respond_to do |format|
+        if @user.update(user_params)
+          format.html { redirect_to @user, notice: t('controllers.common.notice_update', name: Book.model_name.human) }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          format.html { render :edit }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to users_path
     end
   end
 
