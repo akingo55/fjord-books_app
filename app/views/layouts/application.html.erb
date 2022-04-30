@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <li><%= current_user.email %></li>
+        <li><%= link_to User.model_name.human, users_path %></li>
+        <li><%= link_to t('devise.shared.links.sign_out'), destroy_user_session_path, method: :delete %></li>
+      <% end %>
+
+    </header>
     <%= yield %>
   </body>
 </html>
