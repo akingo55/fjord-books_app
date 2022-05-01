@@ -1,0 +1,26 @@
+en:
+  activerecord:
+    models:
+      book: Book  #g
+
+    attributes:
+      book:
+        author: Author  #g
+        memo: Memo  #g
+        picture: Picture  #g
+        title: Title  #g
+
+  common:
+    show: show
+    edit: edit
+    destroy: destroy
+    back: back
+
+  book:
+    new: new book
+
+  notice:
+    create: "%{record} was successfully created."
+    update: "%{record} was successfully updated."
+    destroy: "%{record} was successfully destroyed."
+    confirm: Are you sure?

@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    models:
+      book: 本  #g
+
+    attributes:
+      book:
+        author: 著者  #g
+        memo: メモ  #g
+        picture: 写真  #g
+        title: タイトル  #g
+
+  common:
+    show: 表示
+    edit: 編集
+    destroy: 削除
+    back: TOPに戻る
+
+  book:
+    new: 新しい本を登録する
+
+  notice:
+    create: "%{record}を登録しました"
+    update: "%{record}を更新しました"
+    destroy: "%{record}を削除しました"
+    confirm: 本当に削除しますか？
