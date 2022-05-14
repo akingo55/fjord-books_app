@@ -218,6 +218,9 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+    friendships:
+      follow: フォロー
+      unfollow: フォロー外す
     pagination:
       first: '最初'
       last: '最後'
@@ -229,6 +232,11 @@ ja:
       notice_create: "%{name}が作成されました。"
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
+    friendships:
+      notice_follow_successed: "フォローしました。"
+      notice_follow_failed: "フォローできませんでした。"
+      notice_unfollow_successed: "フォロー解除しました。"
+      notice_unfollow_failed: "フォロー解除できませんでした。"
   layouts:
     application:
       menu: メニュー
