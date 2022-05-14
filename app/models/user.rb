@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  has_many :active_friendships, class_name: 'Friendship', foreign_key: 'following_id', dependent: :destroy#, inverse_of: :user
-  has_many :passive_friendships, class_name: 'Friendship', foreign_key: 'followed_id', dependent: :destroy#, inverse_of: :user
+  has_many :active_friendships, class_name: 'Friendship', foreign_key: 'following_id', dependent: :destroy, inverse_of: :following
+  has_many :passive_friendships, class_name: 'Friendship', foreign_key: 'followed_id', dependent: :destroy, inverse_of: :followed
   has_many :followings, through: :active_friendships, source: :followed
   has_many :followers, through: :passive_friendships, source: :following
 
