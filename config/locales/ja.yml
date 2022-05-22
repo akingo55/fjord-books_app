@@ -233,10 +233,10 @@ ja:
       notice_update: "%{name}が更新されました。"
       notice_destroy: "%{name}が削除されました。"
     friendships:
-      notice_follow_successed: "フォローしました。"
-      notice_follow_failed: "フォローできませんでした。"
-      notice_unfollow_successed: "フォロー解除しました。"
-      notice_unfollow_failed: "フォロー解除できませんでした。"
+      notice_follow_successed: フォローしました。
+      notice_follow_failed: フォローできませんでした。
+      notice_unfollow_successed: フォロー解除しました。
+      notice_unfollow_failed: フォロー解除できませんでした。
   layouts:
     application:
       menu: メニュー
