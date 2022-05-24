@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_05_105453) do
+ActiveRecord::Schema.define(version: 2022_05_24_143616) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2022_05_05_105453) do
   end
 
   create_table "friendships", force: :cascade do |t|
-    t.integer "following_id"
-    t.integer "followed_id"
+    t.integer "following_id", null: false
+    t.integer "followed_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["followed_id"], name: "index_friendships_on_followed_id"
