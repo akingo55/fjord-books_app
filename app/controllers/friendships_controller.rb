@@ -3,22 +3,20 @@
 class FriendshipsController < ApplicationController
   def create
     @user = User.find(params[:followed_id])
-    following = current_user.follow(@user)
-    if following.save
-      flash[:success] = t('controllers.frinedships.notice_follow_successed')
+    if current_user.follow(@user)
+      flash[:notice] = t('controllers.friendships.notice_follow_successed')
     else
-      flash[:alert] = t('controllers.frinedships.notice_follow_failed')
+      flash[:alert] = t('controllers.friendships.notice_follow_failed')
     end
     redirect_to @user
   end
 
   def destroy
     @user = User.find(params[:followed_id])
-    following = current_user.unfollow(@user)
-    if following.destroy
-      flash[:success] = t('controllers.frinedships.notice_unfollow_successed')
+    if current_user.unfollow(@user)
+      flash[:notice] = t('controllers.friendships.notice_unfollow_successed')
     else
-      flash[:alert] = t('controllers.frinedships.notice_unfollow_failed')
+      flash[:alert] = t('controllers.friendships.notice_unfollow_failed')
     end
     redirect_to @user
   end
