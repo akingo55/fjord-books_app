@@ -21,12 +21,10 @@ class ReportsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def edit
     @report = Report.find(params[:id])
-
   end
 
   def update
@@ -36,7 +34,6 @@ class ReportsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
