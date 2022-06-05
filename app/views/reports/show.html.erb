@@ -1,0 +1,25 @@
+<p>
+  <strong><%= User.human_attribute_name(:name) %>:</strong>
+  <%= @report.user_name %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name(:title) %>:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name(:content) %>:</strong>
+  <%= @report.content %>
+</p>
+
+<p>
+  <strong><%= Report.human_attribute_name(:created_at) %>:</strong>
+  <%= @report.format_time %>
+</p>
+
+<% if current_user.id == @report.user_id %>
+  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+  <%= link_to t('views.common.destroy'), @report, method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+<% end %>
+<%= link_to t('views.common.back'), reports_path %>
