@@ -6,8 +6,12 @@ class Comment < ApplicationRecord
   validates :content, presence: true
 
   def user_name
-    user_id = self.user_id
-    User.find(user_id).name
+    user = User.find(user_id)
+    if user.name.nil?
+      user.email
+    else
+      user.name
+    end
   end
 
   def format_time
