@@ -7,7 +7,7 @@ class Comment < ApplicationRecord
 
   def user_name
     user = User.find(user_id)
-    if user.name.nil?
+    if user.name.empty?
       user.email
     else
       user.name
