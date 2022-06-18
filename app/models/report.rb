@@ -2,11 +2,12 @@
 
 class Report < ApplicationRecord
   belongs_to :user
+  has_many :comments, as: :commentable, dependent: :destroy
   validates :title, presence: true
   validates :content, presence: true
 
   def format_time
-    self.created_at.strftime('%Y/%m/%d %H:%M')
+    created_at.strftime('%Y/%m/%d %H:%M')
   end
 
   def user_name
