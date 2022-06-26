@@ -7,7 +7,7 @@ class Report < ApplicationRecord
   validates :content, presence: true
 
   def format_time
-    created_at.strftime('%Y/%m/%d %H:%M')
+    I18n.l created_at, format: :long
   end
 
   def user_name

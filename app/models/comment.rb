@@ -15,6 +15,6 @@ class Comment < ApplicationRecord
   end
 
   def format_time
-    created_at.strftime('%Y/%m/%d %H:%M')
+    I18n.l created_at, format: :long
   end
 end
