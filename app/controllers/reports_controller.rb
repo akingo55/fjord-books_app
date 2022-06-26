@@ -30,6 +30,8 @@ class ReportsController < ApplicationController
 
   def update
     @report = Report.find(params[:id])
+    redirect_to @report unless current_user.id == @report.user_id
+
     if @report.update(report_params)
       redirect_to @report, notice: t('controllers.common.notice_update', name: Report.model_name.human)
     else
@@ -39,6 +41,8 @@ class ReportsController < ApplicationController
 
   def destroy
     @report = Report.find(params[:id])
+    redirect_to @report unless current_user.id == @report.user_id
+
     if @report.destroy
       redirect_to @report, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
     else

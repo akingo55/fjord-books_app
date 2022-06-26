@@ -24,6 +24,8 @@ class CommentsController < ApplicationController
 
   def update
     @comment = @commentable.comments.find(params[:id])
+    redirect_to @commentable unless current_user.id == @comment.user_id
+
     if @comment.update(comment_params)
       redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
     else
@@ -33,6 +35,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @commentable.comments.find(params[:id])
+    redirect_to @commentable unless current_user.id == @comment.user_id
+
     if @comment.destroy
       redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
     else
