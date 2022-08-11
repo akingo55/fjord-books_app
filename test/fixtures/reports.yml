@@ -4,6 +4,7 @@ one:
   user: alice
   title: MyString
   content: MyText
+  created_at: <%= Date.new(2022, 8, 1) %>
 
 two:
   user: bob

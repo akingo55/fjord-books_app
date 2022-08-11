@@ -19,6 +19,9 @@ class ReportTest < ActiveSupport::TestCase
 
   test 'format created_on' do
     one = reports(:one)
-    assert_equal one.created_on, Time.zone.today.to_date
+
+    travel_to Date.new(2022, 8, 1) do
+      assert_equal one.created_on, Date.new(2022, 8, 1)
+    end
   end
 end
