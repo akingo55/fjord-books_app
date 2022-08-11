@@ -3,7 +3,15 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test 'alice follows bob' do
+  test 'follow and unfollow' do
+    alice = users(:alice)
+    bob = users(:bob)
+
+    assert alice.follow(bob)
+    assert alice.unfollow(bob)
+  end
+
+  test 'following? and followed_by?' do
     alice = users(:alice)
     bob = users(:bob)
 
@@ -14,11 +22,6 @@ class UserTest < ActiveSupport::TestCase
 
     assert alice.following?(bob)
     assert bob.followed_by?(alice)
-
-    alice.unfollow(bob)
-
-    assert_not alice.following?(bob)
-    assert_not bob.followed_by?(alice)
   end
 
   test 'user name or email' do
