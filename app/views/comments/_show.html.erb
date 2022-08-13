@@ -1,0 +1,22 @@
+<h1><%= t('views.common.title_show', name: Comment.model_name.human) %></h1>
+<p>
+  <strong><%= Comment.human_attribute_name(:user_name) %>:</strong>
+  <%= @comment.user_name %>
+</p>
+
+<p>
+  <strong><%= Comment.human_attribute_name(:content) %>:</strong>
+  <%= @comment.content %>
+</p>
+
+<p>
+  <strong><%= Comment.human_attribute_name(:created_at) %>:</strong>
+  <%= @comment.format_time %>
+</p>
+
+<% if current_user.id == comment.user_id %>
+  <%= link_to t('views.common.edit'), edit_polymorphic_path([commentable, comment]) %> |
+  <%= link_to t('views.common.destroy'), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %> |
+<% end %>
+
+<%= link_to t('views.common.back'), polymorphic_path(commentable) %>
